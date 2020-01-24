@@ -1,0 +1,141 @@
+main {
+	max-width: 75rem;
+	padding: 1rem 1rem 0 1rem;;
+}
+li{	list-style-type: none;}
+.featured li {
+	display: flex;
+	/*justify-content: space-between; /* zie de toelichting in het boek */
+	font-size: 1rem;
+	padding-bottom: .75rem;
+	border-bottom: 1px solid #999;
+	margin-bottom: .75rem;
+}
+.featured article:first-child {
+	order: 1;
+	margin-left: 1rem;
+}
+.featured article:last-child {
+	flex: 1; /* zie de toelichting in het boek */
+}
+.featured h2 {
+	font-size: inherit;
+	font-weight: normal;
+}
+.featured p {
+	display: none;
+}
+.featured img {
+	width: 5rem;
+}
+.latest {
+	display: none;
+}
+@media (min-width: 37rem) {
+li{	list-style-type: none;}
+	.featured ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.featured li {
+		flex-direction: column;
+		flex: 50%;
+		padding-right: .5rem;
+		padding-bottom: 0;
+		border-bottom: none;
+		margin-bottom: 1.5rem;
+	}
+	.featured li:nth-child(even) {
+		padding-right: 0;
+		padding-left: .5rem;
+	}
+	.featured article:first-child {
+		order: 0;
+		margin-left: 0;
+
+	}
+	.featured img {
+		width: 100%;
+	}
+	.featured h2 {
+		font-weight: bold;
+	}
+	.featured p {
+		display: block;
+	}
+}
+
+@media (min-width: 47rem) {
+li{	list-style-type: none;}
+	main {
+		display: flex;
+	}
+	.featured {
+		padding-right: 2rem;
+	}
+	.latest {
+		flex: none;
+		display: block;
+		width: 300px;
+	}
+	.latest li {
+		display: flex;
+		/* justify-content: space-between; /* zie toelichting in het boek */
+		font-size: 1rem;
+		margin-bottom: .75rem;
+	}
+	.latest img {
+		width: 4rem;
+	}
+	.latest article {
+		order: 1;
+	}
+	.latest p {
+		flex: 1; /* zie toelichting in het boek */
+		margin-right: 1rem;
+	}
+	.latest li:nth-child(3) p {
+		/* flex: initial; /* zie toelichting in het boek */
+	}
+}
+
+@media (min-width: 69rem) {
+li{	list-style-type: none;}
+	main {
+		margin: 0 auto;
+	}
+	.featured li {
+		flex: 33%;
+	}
+	.featured li:last-child {
+		flex-grow: 0;
+	}
+	.featured li:nth-child(3n+1) { /* 1, 4, 7 ... */
+		padding-right: .5rem;
+		padding-left: 0;
+	}
+	.featured li:nth-child(3n-1) { /* 2, 5, 8 ...*/
+		padding-right: .25rem;
+		padding-left: .25rem;
+	}
+	.featured li:nth-child(3n) { /* 3, 6, 9 ... */
+		padding-right: 0;
+		padding-left: .5rem;
+	}
+}
+
+
+/********************************
+ hierna alleen algemene stijlen
+********************************/
+body {
+	font-family: sans-serif;
+	font-size: 1.25rem;
+}
+ul,
+ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
